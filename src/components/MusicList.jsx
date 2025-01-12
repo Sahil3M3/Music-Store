@@ -27,6 +27,10 @@ const MusicList = () => {
   ];
 
   return (
+    <>
+    <Row style={{fontFamily:"fantasy", textAlign:"center"}}>
+        <h1>Music</h1>
+      </Row>
     <Row xs={10} className="mt-3">
       {productsArr.map((product, index) => (
         <MusicCard
@@ -38,6 +42,7 @@ const MusicList = () => {
         />
       ))}
     </Row>
+    </>
   );
 };
 
