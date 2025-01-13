@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Badge, Button, Container, Nav, Navbar } from 'react-bootstrap';
+import CartContext from '../store/cart-context';
 
 const NavBar = (props) => {
 const handleClick=()=>{
 props.show()
   
-}
+} 
+let cartCtx=useContext(CartContext)
+
 
   return  (
     <>
@@ -28,7 +31,7 @@ props.show()
               <h6>Cart</h6>
             </Button>
             <h6>
-              <Badge bg="secondary">{0}</Badge>
+              <Badge bg="secondary">{cartCtx.items.length}</Badge>
             </h6>
           </Nav>
         </Navbar.Collapse>

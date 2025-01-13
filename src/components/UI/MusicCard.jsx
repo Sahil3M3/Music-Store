@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, Button, Row, Col } from 'react-bootstrap';
+import CartContext from '../../store/cart-context';
 
 const MusicCard = ({ albumNumber, title, price, imageUrl }) => {
+
+    let cartCtx=useContext(CartContext);
+  
+    const addToCart=(albumNumber,title,price,imageUrl)=>{
+      cartCtx.addToCart({albumNumber,title,price,imageUrl})
+    }
   return (
     <Col xs={6} className="d-flex justify-content-center">
       <Card style={{ width: "300px", borderStyle: "none" }}>
@@ -15,7 +22,7 @@ const MusicCard = ({ albumNumber, title, price, imageUrl }) => {
           <Row>
             <Col>${price}</Col>
             <Col>
-              <Button
+              <Button onClick={()=>addToCart(albumNumber,title,price,imageUrl)}
                 style={{
                   background: "rgb(86, 204, 242)",
                   padding: "7px",

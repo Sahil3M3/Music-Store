@@ -1,65 +1,13 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { Button, Image, Modal, Table } from 'react-bootstrap'
+import CartContext from '../../store/cart-context'
 
 const Cart = (props) => {
-
-  const [cartElements,setCartElements] =useState([
-
-    {
-    
-    title: 'Colors',
-    
-    price: 100,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-    
-    quantity: 2,
-    
-    },
-    
-    {
-    
-    title: 'Black and white Colors',
-    
-    price: 50,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-    
-    quantity: 3,
-    
-    },
-    
-    {
-    
-    title: 'Yellow and Black Colors',
-    
-    price: 70,
-    
-    imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-    
-    quantity: 1,
-    
-    }
-    
-    ]) 
+  const cartCtx=useContext(CartContext);
 
     let total=0;
-    const removeItem=(id)=>{
-      setCartElements((ps)=>{        
-        var newarr=[]
-        newarr=ps.filter((c,i)=>{
-          if(i!==id){
-return c;
-          }
-          console.log(newarr);
-          return false;
-        })
-        return newarr;
-      })
 
-    }
-
-    const cart=cartElements.map((c,i)=>{
+    const cart=cartCtx.items.map((c,i)=>{
       total=total+(c.quantity*c.price)
     return  <tr key={i}>
         <td>
@@ -67,14 +15,14 @@ return c;
          {c.title}
         </td>
         <td>{c.price}</td>
-        <td><input defaultValue={c.quantity} style={{width:"15px" ,height:"60"}} /> <Button onClick={()=>removeItem(i)} variant="danger">Remove</Button> </td>
+        <td><input defaultValue={c.quantity} style={{width:"15px" ,height:"60"}} /> <Button variant="danger">Remove</Button> </td>
       </tr>
     })
 
 
   return (
     
-    <Modal show={props.show} onHide={props.hideCart} style={{width:"2200px"}}>
+    <Modal show={props.show} onHide={props.hideCart} centered>
 <Modal.Header closeButton></Modal.Header>
 <Modal.Title>
 <h1>Cart</h1>
