@@ -16,7 +16,7 @@ let cartCtx=useContext(CartContext)
       <Container fluid>
         <Navbar.Collapse>
           <Nav className="me-auto justify-content-center w-100">
-            <Nav.Link href="#home" style={{ color: "white" }}>
+            <Nav.Link href="/" style={{ color: "white" }}>
               <h4>Home</h4>
             </Nav.Link>
             <Nav.Link href="/store" style={{ color: "white" }}>

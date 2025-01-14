@@ -7,10 +7,12 @@ import { useState } from 'react';
 import CartProvider from './store/CartProvider';
 import  { createBrowserRouter, RouterProvider } from "react-router"
 import About from './components/About';
+import HomePage from './components/HomePage';
 
 const router=createBrowserRouter([
   {path:"/about",element:<About/>},
-  {path:"/store",element:<MusicList/>}
+  {path:"/store",element:<MusicList/>},
+  {path:"/",element:<HomePage/>}
 ])
 
 let App=()=> {
