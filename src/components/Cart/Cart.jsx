@@ -22,7 +22,8 @@ const Cart = (props) => {
 
   return (
     
-    <Modal show={props.show} onHide={props.hideCart} centered>
+    <Modal show={props.show} dialogClassName="modal-dialog-right" style={{  position: "fixed",
+      top: "0",left: "0",margin: "0",maxWidth: "400px",height:"100%"}} backdrop={false} onHide={props.hideCart} >
 <Modal.Header closeButton></Modal.Header>
 <Modal.Title>
 <h1>Cart</h1>

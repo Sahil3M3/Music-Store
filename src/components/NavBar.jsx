@@ -19,10 +19,10 @@ let cartCtx=useContext(CartContext)
             <Nav.Link href="#home" style={{ color: "white" }}>
               <h4>Home</h4>
             </Nav.Link>
-            <Nav.Link href="#link" style={{ color: "white" }}>
+            <Nav.Link href="/store" style={{ color: "white" }}>
               <h4>Store</h4>
             </Nav.Link>
-            <Nav.Link href="#link" style={{ color: "white" }}>
+            <Nav.Link href="/about" style={{ color: "white" }}>
               <h4>About</h4>
             </Nav.Link>
           </Nav>

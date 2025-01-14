@@ -5,7 +5,13 @@ import Footer from './components/Footer';
 import Cart from './components/Cart/Cart';
 import { useState } from 'react';
 import CartProvider from './store/CartProvider';
+import  { createBrowserRouter, RouterProvider } from "react-router"
+import About from './components/About';
 
+const router=createBrowserRouter([
+  {path:"/about",element:<About/>},
+  {path:"/store",element:<MusicList/>}
+])
 
 let App=()=> {
 const [isShowCart,setIsShowCart]=useState(false);
@@ -19,7 +25,7 @@ const hideCart=()=>setIsShowCart(false);
 <CartProvider>
 <Cart show={isShowCart} hideCart={hideCart}/>
 <NavBar show={showCart} />      
-<MusicList/>
+<RouterProvider router={router} />
 <Footer></Footer>
 </CartProvider>
   );
