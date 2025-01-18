@@ -25,6 +25,9 @@ let cartCtx=useContext(CartContext)
             <Nav.Link href="/about" style={{ color: "white" }}>
               <h4>About</h4>
             </Nav.Link>
+            <Nav.Link href="/contact" style={{ color: "white" }}>
+              <h4>Contact Us</h4>
+            </Nav.Link>
           </Nav>
           <Nav className="me-auto justify-content-end">
             <Button onClick={handleClick} variant="dark" style={{ color: "white",border:"4px solid rgb(86,204,242) ",width:"80px",borderRadius:"30px" }}>

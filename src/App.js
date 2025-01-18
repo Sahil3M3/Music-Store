@@ -8,11 +8,13 @@ import CartProvider from './store/CartProvider';
 import  { createBrowserRouter, RouterProvider } from "react-router"
 import About from './components/About';
 import HomePage from './components/HomePage';
+import Contact from './components/Contact.jsx'
 
 const router=createBrowserRouter([
   {path:"/about",element:<About/>},
   {path:"/store",element:<MusicList/>},
-  {path:"/",element:<HomePage/>}
+  {path:"/",element:<HomePage/>},
+  {path:'/contact',element:<Contact/>}
 ])
 
 let App=()=> {

@@ -14,8 +14,6 @@ const HomePage = () => {
 
   return (
     <Container fluid>
-   
-      {/* Album Section */}
       <Row className="text-center py-5" style={{ backgroundColor: "rgb(119, 119, 119)" }}>
         <Col>
           <Button variant="info" size="lg" className="mb-4">
@@ -37,7 +35,6 @@ const HomePage = () => {
         </Col>
       </Row>
 
-      {/* Tours Section */}
       <Row className="text-center mt-5">
         <Col>
           <h2>TOURS</h2>
